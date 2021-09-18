@@ -26,7 +26,9 @@ let numberArr = [3, 5, 8, 4, 9];
  * > [4, 6, 9, 5, 10]
  *
  */
-function plusOne() {}
+function plusOne(numberArr) {
+  return numberArr.map(number=> number + 1)
+}
 
 /**
  *
@@ -50,7 +52,9 @@ function plusOne() {}
  * > [6, 10, 16, 8, 18]
  *
  */
-function timesTwo() {}
+function timesTwo(numberArr) {
+  return numberArr.map(number=> number * 2)
+}
 
 /**
  *
@@ -74,7 +78,9 @@ function timesTwo() {}
  * > [3, 5, 9]
  *
  */
-function filterForOdds() {}
+function filterForOdds(numberArr) {
+  return numberArr.filter(num=> num%2 === 1)
+}
 
 /**
  *
@@ -112,7 +118,14 @@ function filterForOdds() {}
  * > [8, 4]
  *
  */
-function filterOddsOrEvens() {}
+function filterOddsOrEvens(nums, parity) {
+  if(parity.toLowerCase() === "odd"){
+    return nums.filter(num=> num %2===1)
+
+  } else if (parity.toLowerCase() === "even"){
+    return nums.filter(num=> num%2===0)
+  }
+}
 
 /**
  *
@@ -142,7 +155,10 @@ function filterOddsOrEvens() {}
  * > 9
  *
  */
-function findTargetNum() {}
+function findTargetNum(nums, targetNum) {
+  return nums.find(num=> num === targetNum);
+
+}
 
 /**
  *
@@ -175,7 +191,9 @@ function findTargetNum() {}
  * > false
  *
  */
-function isEveryElTheSame() {}
+function isEveryElTheSame(arr) {
+  return arr.every(ar=> ar===arr[0]);
+}
 
 /**
  *
@@ -204,7 +222,9 @@ function isEveryElTheSame() {}
  * > true
  *
  */
-function areSomeEqualToInput() {}
+function areSomeEqualToInput(arr, value) {
+  return arr.some(ar=> ar === value);
+}
 
 module.exports = {
   plusOne,
