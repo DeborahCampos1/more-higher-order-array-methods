@@ -23,7 +23,10 @@ const ghostPokemonData = require("../data/ghostPokemon_data");
  * ... Cloyster ...
  * ]
  */
-function filterByType() {}
+function filterByType(pokemonArr, types) {
+  let filter = pokemonArr.filter((poke)=> poke.type.includes(types));
+   return filter;
+}
 
 /**
  *
@@ -44,7 +47,13 @@ function filterByType() {}
  * filterNamesByType(examplePokemonData, 'water')
  *  > [Squirtle, Poliwag, Gyarados, Cloyster]
  */
-function filterNamesByType() {}
+function filterNamesByType(pokemonArr, types) {
+  let filtered = pokemonArr.filter((poke)=> poke.type.includes(types));
+  let names =  filtered.map((el)=> {
+    return el.name;
+  });
+  return names;
+}
 
 /**
  *
@@ -66,7 +75,20 @@ function filterNamesByType() {}
  * filterNamesByStrength(examplePokemonData, 'ice')
  *  > [Charmander, Bulbasaur, Onix]
  */
-function filterNamesByStrength() {}
+function filterNamesByStrength(pokemonArr, types) {
+    let strong = pokemonArr.filter((poke)=> poke.strongAgainst.includes(types));
+    console.log(strong);
+    let names = strong.map((el)=> {
+        return el.name;
+      });
+      if(!strong.length){
+        return `Sorry, could not find any pokemon that are strong against type: "${types}".`;
+      } else {
+        console.log(names);
+        return names;
+      }   
+}    
+
 
 module.exports = {
   filterByType,
