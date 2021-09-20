@@ -42,7 +42,10 @@ const ghostPokemonData = require("../data/ghostPokemon_data");
  * > Sorry, could not find the pokemon you're looking for.
  * 
  */
-function findBySpecies() {}
+function findBySpecies(pokemonArr, specie) {
+  let Obj = pokemonArr.find((poke)=> poke.species.toLowerCase() === specie.toLowerCase());
+  return Obj;
+}
 
 /**
  *
@@ -79,7 +82,13 @@ function findBySpecies() {}
  * > Sorry, could not find a pokemon that has 12 move(s).
  * 
  */
-function findByNumOfMoves() {}
+function findByNumOfMoves(pokemonArr, num) {
+  let Obj = pokemonArr.find((poke)=> poke.moves.length === num );
+  if(!Obj){
+    return `Sorry, could not find a pokemon that has ${num} move(s).`
+  }
+  return Obj;
+}
 
 /**
  *
@@ -125,7 +134,16 @@ function findByNumOfMoves() {}
  * > Sorry, could not find pokemon with move "bite".
  * 
  */
-function findByMove() {}
+function findByMove(pokemonArr, move) {
+  let Obj = pokemonArr.find((poke)=> {
+    let match = poke.moves.find((mov)=> mov.name === move);
+    return match;
+  });
+  if(!Obj){
+    return null;
+  }
+  return Obj;
+}
 
 module.exports = {
   findBySpecies,
