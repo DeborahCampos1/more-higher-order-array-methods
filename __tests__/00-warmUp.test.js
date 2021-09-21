@@ -53,17 +53,17 @@ describe("filterOddsOrEvens()", () => {
   });
 
   test("should return a filtered array with only odd or even numbers depending on inputted parity.", () => {
-    expect(filterOddsOrEvens([1, 2, 3], odd)).toEqual([1, 3]);
-    expect(filterOddsOrEvens([1, 2, 3], even)).toEqual([2]);
-    expect(filterOddsOrEvens([2, 3, 4, 5, 6, 7], odd)).toEqual([3, 5, 7]);
-    expect(filterOddsOrEvens([2, 3, 4, 5, 6, 7], even)).toEqual([2, 4, 6]);
+    expect(filterOddsOrEvens([1, 2, 3], "odd")).toEqual([1, 3]);
+    expect(filterOddsOrEvens([1, 2, 3], "even")).toEqual([2]);
+    expect(filterOddsOrEvens([2, 3, 4, 5, 6, 7], "odd")).toEqual([3, 5, 7]);
+    expect(filterOddsOrEvens([2, 3, 4, 5, 6, 7], "even")).toEqual([2, 4, 6]);
   });
 
   test("should be case-insensitive.", () => {
-    expect(filterOddsOrEvens([1, 2, 3], ODd)).toEqual([1, 3]);
-    expect(filterOddsOrEvens([1, 2, 3], eVen)).toEqual([2]);
-    expect(filterOddsOrEvens([2, 3, 4, 5, 6, 7], odD)).toEqual([3, 5, 7]);
-    expect(filterOddsOrEvens([2, 3, 4, 5, 6, 7], eVEn)).toEqual([2, 4, 6]);
+    expect(filterOddsOrEvens([1, 2, 3], "ODd")).toEqual([1, 3]);
+    expect(filterOddsOrEvens([1, 2, 3], "eVen")).toEqual([2]);
+    expect(filterOddsOrEvens([2, 3, 4, 5, 6, 7], "odD")).toEqual([3, 5, 7]);
+    expect(filterOddsOrEvens([2, 3, 4, 5, 6, 7], "eVEn")).toEqual([2, 4, 6]);
   });
 });
 

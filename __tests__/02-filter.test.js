@@ -4,6 +4,8 @@ const {
   filterNamesByStrength,
 } = require("../src/02-filter");
 
+//hi Greg
+
 describe("filterByType()", () => {
   let pokemon;
   beforeEach(() => {
@@ -60,7 +62,7 @@ describe("filterNamesByType()", () => {
 
   test("should return an array of all pokemon names of the inputted type.", () => {
     const actual = filterNamesByType(pokemon, "water");
-    const expected = [Squirtle, Poliwag, Gyarados, Cloyster];
+    const expected = ["Squirtle", "Poliwag", "Gyarados", "Cloyster"];
     expect(actual).toEqual(expected);
   });
 
@@ -97,7 +99,7 @@ describe("filterNamesByStrength()", () => {
 
   test("should return an array of all pokemon names that are strong against the inputted type.", () => {
     const actual = filterNamesByStrength(pokemon, "ice");
-    const expected = [Charmander, Bulbasaur, Onix];
+    const expected = ["Charmander", "Onix"];
     expect(actual).toEqual(expected);
   });
 
